@@ -261,11 +261,13 @@ input::-webkit-calendar-picker-indicator {
 @media (max-width: 600px) {
 
   .app {
-    padding: 18px 16px 16px;
+    padding: 42px 16px 16px;
   }
 
   .container {
-    max-width: 100%;
+    width: 100%;
+    max-width: 360px;
+    margin: 0 auto;
   }
 
   input {
@@ -310,4 +312,3 @@ input::-webkit-calendar-picker-indicator {
     margin-top: 7px;
   }
 }
-
