@@ -240,21 +240,21 @@ function App() {
 
         {/* DAY TEMPERATURE */}
         <div className="temperature-wrapper">
-          {!entry.nightTemperature && (
+          {!entry.dayTemperature && (
             <span className="input-placeholder">
-              NIGHT TEMPERATURE
+              DAY TEMPERATURE
             </span>
           )}
 
           <input
             type="number"
-            value={entry.nightTemperature}
+            value={entry.dayTemperature}
             onChange={(e) =>
-              updateEntry("nightTemperature", e.target.value)
+              updateEntry("dayTemperature", e.target.value)
             }
           />
 
-          {entry.nightTemperature && (
+          {entry.dayTemperature && (
             <span className="temperature-symbol">°</span>
           )}
         </div>
@@ -296,14 +296,27 @@ function App() {
         </div>
 
         {/* NIGHT TEMPERATURE */}
-        <input
-          type="number"
-          placeholder="NIGHT TEMPERATURE"
-          value={entry.nightTemperature}
-          onChange={(e) =>
-            updateEntry("nightTemperature", e.target.value)
-          }
-        />
+        <div className="temperature-wrapper">
+          {!entry.nightTemperature && (
+            <span className="input-placeholder">
+              NIGHT TEMPERATURE
+            </span>
+          )}
+
+          <input
+            type="number"
+            value={entry.nightTemperature}
+            onChange={(e) =>
+              updateEntry("nightTemperature", e.target.value)
+            }
+          />
+
+          {entry.nightTemperature && (
+            <span className="temperature-symbol">°</span>
+          )}
+        </div>
+
+        <div className="spacer"></div>
 
         {/* BUTTONS */}
         <button
