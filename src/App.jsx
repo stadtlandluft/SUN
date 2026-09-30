@@ -239,14 +239,25 @@ function App() {
         </div>
 
         {/* DAY TEMPERATURE */}
-        <input
-          type="number"
-          placeholder="DAYTIME TEMPERATURE"
-          value={entry.dayTemperature}
-          onChange={(e) =>
-            updateEntry("dayTemperature", e.target.value)
-          }
-        />
+        <div className="temperature-wrapper">
+          {!entry.nightTemperature && (
+            <span className="input-placeholder">
+              NIGHT TEMPERATURE
+            </span>
+          )}
+
+          <input
+            type="number"
+            value={entry.nightTemperature}
+            onChange={(e) =>
+              updateEntry("nightTemperature", e.target.value)
+            }
+          />
+
+          {entry.nightTemperature && (
+            <span className="temperature-symbol">°</span>
+          )}
+        </div>
 
         <div className="spacer"></div>
 

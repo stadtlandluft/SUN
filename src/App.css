@@ -292,7 +292,7 @@ input::-webkit-calendar-picker-indicator {
   .date-input {
     width: 100%;
     height: 45px;
-    padding: 0 0px;
+    padding: 0 18px;
     text-align: center;
 
     appearance: none;
@@ -319,6 +319,9 @@ input::-webkit-calendar-picker-indicator {
     height: 45px;
     margin: 0;
     padding: 0 18px;
+
+    display: flex;
+    align-items: center;
 
     appearance: none;
     -webkit-appearance: none;
@@ -358,3 +361,47 @@ input::-webkit-calendar-picker-indicator {
     margin-top: 7px;
   }
 }
+
+/* =========================
+   TEMPERATURE
+   ========================= */
+
+.temperature-wrapper {
+  position: relative;
+  width: 100%;
+  height: 45px;
+  margin-bottom: 7px;
+}
+
+.temperature-wrapper input {
+  width: 100%;
+  height: 45px;
+  margin: 0;
+
+  padding: 0 18px;
+
+  text-align: center;
+
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+.temperature-wrapper .input-placeholder {
+  left: 18px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.temperature-symbol {
+  position: absolute;
+
+  right: calc(50% - 28px);
+  top: 50%;
+  transform: translateY(-50%);
+
+  color: #d9d9d9;
+  font-size: 16px;
+
+  pointer-events: none;
+}
+
