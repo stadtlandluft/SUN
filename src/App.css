@@ -253,3 +253,61 @@ input::-webkit-calendar-picker-indicator {
 .length-field strong {
   color: #999;
 }
+
+/* =========================
+   MOBILE
+   ========================= */
+
+@media (max-width: 600px) {
+
+  .app {
+    padding: 18px 16px 16px;
+  }
+
+  .container {
+    max-width: 100%;
+  }
+
+  input {
+    height: 45px;
+    margin-bottom: 7px;
+    padding: 0 18px;
+    font-size: 16px;
+  }
+
+  .input-wrapper {
+    height: 45px;
+    margin-bottom: 7px;
+  }
+
+  .input-wrapper input {
+    height: 45px;
+    padding: 0 18px;
+  }
+
+  .input-placeholder {
+    left: 18px;
+    font-size: 16px;
+  }
+
+  .spacer {
+    height: 10px;
+  }
+
+  /* Buttons */
+
+  .save-button,
+  .archive-button {
+    height: 45px;
+    font-size: 16px;
+  }
+
+  .save-button {
+    margin-top: 12px;
+  }
+
+  .archive-button {
+    margin-top: 7px;
+  }
+}
+
