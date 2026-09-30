@@ -266,7 +266,7 @@ input::-webkit-calendar-picker-indicator {
 
   .container {
     width: 100%;
-    max-width: 250px;
+    max-width: 360px;
     margin: 0 auto;
   }
 
@@ -292,7 +292,7 @@ input::-webkit-calendar-picker-indicator {
   .date-input {
     width: 100%;
     height: 45px;
-    padding: 0 18px;
+    padding: 0 0px;
     text-align: center;
 
     appearance: none;
