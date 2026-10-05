@@ -9,10 +9,12 @@ const emptyEntry = () => ({
   date: getToday(),
   sunrise: "",
   sunset: "",
+  SUNSEThome: "",
   dayTemperature: "",
   moonrise: "",
   moonset: "",
   nightTemperature: "",
+  weight: "",
 });
 
 function App() {
@@ -155,6 +157,15 @@ function App() {
             </strong>
           </div>
 
+          <div className="saved-field">
+            <span>SUNSEThome</span>
+            <strong>
+              {entry.sunsetHome
+                ? `${entry.sunsetHome}°`
+                : "—"}
+            </strong>
+          </div>
+
           <div className="spacer"></div>
 
           <div className="saved-field">
@@ -179,6 +190,17 @@ function App() {
             <strong>
               {entry.nightTemperature
                 ? `${entry.nightTemperature}°`
+                : "—"}
+            </strong>
+          </div>
+
+                    <div className="spacer"></div>
+
+          <div className="saved-field">
+            <span>WEIGHT</span>
+            <strong>
+              {entry.weight
+                ? `${entry.weight} kg`
                 : "—"}
             </strong>
           </div>
@@ -259,6 +281,24 @@ function App() {
           )}
         </div>
 
+       
+        {/* SUNSEThome */}
+        <div className="input-wrapper">
+          {!entry.sunsethome && (
+            <span className="input-placeholder">
+              SUNSET @ home
+            </span>
+          )}
+
+          <input
+            type="time"
+            value={entry.sunsethome}
+            onChange={(e) =>
+              updateEntry("sunsethome", e.target.value)
+            }
+          />
+        </div>
+
         <div className="spacer"></div>
 
         {/* MOONRISE */}
@@ -304,15 +344,39 @@ function App() {
           )}
 
           <input
-            type="number"
-            value={entry.nightTemperature}
-            onChange={(e) =>
-              updateEntry("nightTemperature", e.target.value)
-            }
-          />
+              type="number"
+              value={entry.nightTemperature}
+              onChange={(e) =>
+                updateEntry("nightTemperature", e.target.value)
+              }
+            />
+          </div>
 
           {entry.nightTemperature && (
             <span className="temperature-symbol">°</span>
+          )}
+        </div>
+
+<div className="spacer"></div>
+
+          {/* WEIGHT */}
+        <div className="temperature-wrapper">
+          {!entry.weight && (
+            <span className="input-placeholder">
+              WEIGHT
+            </span>
+          )}
+
+          <input
+            type="number"
+            value={entry.weight}
+            onChange={(e) =>
+              updateEntry("weight", e.target.value)
+            }
+          />
+
+          {entry.weight && (
+            <span className="temperature-symbol">kg</span>
           )}
         </div>
 
@@ -334,7 +398,6 @@ function App() {
         </button>
 
       </div>
-    </div>
   );
 }
 
